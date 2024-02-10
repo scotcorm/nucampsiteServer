@@ -26,6 +26,7 @@ campsiteRouter
   })
   .put((req, res) => {
     res.statusCode = 403;
+    res.setHeader('Content-Type', 'text/plain');
     res.end('PUT operation not supported on /campsites');
   })
   .delete((req, res, next) => {
@@ -51,6 +52,7 @@ campsiteRouter
   })
   .post((req, res) => {
     res.statusCode = 403;
+    res.setHeader('Content-Type', 'text/plain');
     res.end(
       `POST operation not supported on /campsites/${req.params.campsiteId}`
     );
@@ -120,6 +122,7 @@ campsiteRouter
   })
   .put((req, res) => {
     res.statusCode = 403;
+    res.setHeader('Content-Type', 'text/plain');
     res.end(
       `PUT operation not supported on /campsites/${req.params.campsiteId}/comments`
     );
@@ -171,6 +174,7 @@ campsiteRouter
   })
   .post((req, res) => {
     res.statusCode = 403;
+    res.setHeader('Content-Type', 'text/plain');
     res.end(
       `POST operation not supported on /campsites/${req.params.campsiteId}/comments/${req.params.commentId}`
     );
