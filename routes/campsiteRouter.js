@@ -226,6 +226,14 @@ campsiteRouter
             err.status = 404;
             return next(err);
           }
+        } else if (!campsite) {
+          const err = new Error(`Campsite ${req.params.campsiteId} not found`);
+          err.status = 404;
+          return next(err);
+        } else {
+          const err = new Error(`Comment ${req.params.commentId} not found`);
+          err.status = 404;
+          return next(err);
         }
       })
       .catch((err) => next(err));
@@ -258,7 +266,7 @@ campsiteRouter
           err.status = 404;
           return next(err);
         } else {
-          err = new Error(`Comment ${req.params.commentId} not found`);
+          const err = new Error(`Comment ${req.params.commentId} not found`);
           err.status = 404;
           return next(err);
         }
